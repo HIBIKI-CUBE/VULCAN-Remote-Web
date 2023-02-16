@@ -34,4 +34,7 @@ module.exports = {
     semi: 'error',
     quotes: ['error', 'single'],
   },
+  globals: {
+    BluetoothRemoteGATTCharacteristic: false,
+  },
 };
