@@ -88,10 +88,10 @@
   }
 
   if (browser) {
-    if (
+    const isMobileSafari =
       (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')) &&
-      navigator.userAgent.includes('Safari')
-    ) {
+      navigator.userAgent.includes('Safari');
+    if (isMobileSafari) {
       window.location.href = `bluefy://open?url=${window.location.href}`;
     }
     navigator.mediaDevices

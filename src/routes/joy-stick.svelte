@@ -37,13 +37,13 @@
       distance = clamp(
         Math.sqrt(Math.pow(ex, 2) + Math.pow(ey, 2)) / (circle.getBoundingClientRect().width / 2),
         0,
-        1
+        1,
       );
       x.set(
-        distance * (circle.getBoundingClientRect().width / 2) * Math.sin((angle / 180) * Math.PI)
+        distance * (circle.getBoundingClientRect().width / 2) * Math.sin((angle / 180) * Math.PI),
       );
       y.set(
-        -distance * (circle.getBoundingClientRect().width / 2) * Math.cos((angle / 180) * Math.PI)
+        -distance * (circle.getBoundingClientRect().width / 2) * Math.cos((angle / 180) * Math.PI),
       );
     }
   }
