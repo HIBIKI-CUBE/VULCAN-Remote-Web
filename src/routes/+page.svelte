@@ -157,7 +157,7 @@
     left 0
     width 100%
     height 100%
-    // filter blur(10px)
+    filter blur(10px)
     scale 1.05
     object-fit cover
 

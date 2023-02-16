@@ -15,6 +15,9 @@
   });
 
   let circle: HTMLElement;
+
+  const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
+
   function handleTouch(event: TouchEvent) {
     if (event.type === 'touchend') {
       x.set(0);
@@ -22,19 +25,26 @@
       angle = 0;
       distance = 0;
     } else {
-      x.set(
-        event.touches[0].clientX -
+      const ex =
+          event.touches[0].clientX -
           circle?.getBoundingClientRect().x -
           circle?.getBoundingClientRect().width / 2,
+        ey =
+          event.touches[0].clientY -
+          circle?.getBoundingClientRect().y -
+          circle?.getBoundingClientRect().height / 2;
+      angle = ex === 0 && ey === 0 ? 0 : (Math.atan2(ex, -ey) * 180) / Math.PI;
+      distance = clamp(
+        Math.sqrt(Math.pow(ex, 2) + Math.pow(ey, 2)) / (circle.getBoundingClientRect().width / 2),
+        0,
+        1
+      );
+      x.set(
+        distance * (circle.getBoundingClientRect().width / 2) * Math.sin((angle / 180) * Math.PI)
       );
       y.set(
-        event.touches[0].clientY -
-          circle?.getBoundingClientRect().y -
-          circle?.getBoundingClientRect().height / 2,
+        -distance * (circle.getBoundingClientRect().width / 2) * Math.cos((angle / 180) * Math.PI)
       );
-      angle = $x === 0 && $y === 0 ? 0 : (Math.atan2($x, -$y) * 180) / Math.PI;
-      distance =
-        Math.sqrt(Math.pow($x, 2) + Math.pow($y, 2)) / (circle.getBoundingClientRect().width / 2);
     }
   }
 </script>
