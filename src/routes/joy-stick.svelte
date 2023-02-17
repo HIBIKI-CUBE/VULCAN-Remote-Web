@@ -6,11 +6,11 @@
     distance = 0;
 
   const x = tweened(0, {
-    duration: 300,
+    duration: 250,
     easing: cubicOut,
   });
   const y = tweened(0, {
-    duration: 300,
+    duration: 250,
     easing: cubicOut,
   });
 

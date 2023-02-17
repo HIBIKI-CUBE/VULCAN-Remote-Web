@@ -1,0 +1,16 @@
+{
+  "name": "VULCAN Remote PWA",
+  "short_name": "VULCAN Remote",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "vulcan-remote-app-logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#444444",
+  "description": "VULCANを遠隔で操作するためのアプリです。可能な限りPWAではなくネイティブアプリをご利用ください。"
+}
