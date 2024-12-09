@@ -28,7 +28,7 @@
     "stylelint-config-recess-order": "^3.1.0",
     "stylelint-stylus": "^0.18.0",
     "stylus": "^0.59.0",
-    "svelte": "^3.55.1",
+    "svelte": "^4.2.19",
     "svelte-check": "^3.0.3",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
